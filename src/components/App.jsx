@@ -31,7 +31,11 @@ const App = () => {
   const handleSubmit = e => {
     e.preventDefault();
 
-    if (contacts.some((contact) => contact.name.toLowerCase() === name.toLowerCase())) {
+    if (
+      contacts.some(
+        contact => contact.name.toLowerCase() === name.toLowerCase()
+      )
+    ) {
       alert(`${name} is already a contact!`);
       return;
     }
@@ -62,29 +66,60 @@ const App = () => {
   return (
     <div
       style={{
+        maxWidth: 950,
         height: '100vh',
         display: 'flex',
-        justifyContent: 'center',
-        alignItems: 'center',
-        fontSize: 40,
+        justifyContent: 'start',
+        alignItems: 'start',
+        gap: 100,
+        fontSize: 30,
         color: '#010101',
+        margin: 20,
+        padding: 20,
+        backgroundColor: 'lightgray',
+        border: '10px solid darkgray',
+        borderRadius: '10px',
       }}
     >
-      <h1>Phonebook</h1>
-      <ContactForm
-        name={name}
-        number={number}
-        handleNameChange={handleNameChange}
-        handleNumberChange={handleNumberChange}
-        handleSubmit={handleSubmit}
-      />
-
-      <h2>Contacts</h2>
-      <Filter filter={filter} handleFilterChange={handleFilterChange} />
-      <ContactList
-        contacts={filteredContacts}
-        handleDeleteContact={handleDeleteContact}
-      />
+      <div
+        style={{
+          display: 'flex',
+          justifyContent: 'center',
+          alignItems: 'start',
+          flexDirection: 'column',
+        }}
+      >
+        <h1>Phonebook</h1>
+        <ContactForm
+          name={name}
+          number={number}
+          handleNameChange={handleNameChange}
+          handleNumberChange={handleNumberChange}
+          handleSubmit={handleSubmit}
+        />
+      </div>
+      <div
+        style={{
+          marginTop: 18,
+          display: 'flex',
+          justifyContent: 'center',
+          alignItems: 'start',
+          flexDirection: 'column',
+          gap: 30,
+        }}
+      >
+        <div>
+          <h2>Contacts</h2>
+          <Filter filter={filter} handleFilterChange={handleFilterChange} />
+        </div>
+        <div>
+          <h2 style={{ marginTop: '25px' }}>Contact list</h2>
+          <ContactList
+            contacts={filteredContacts}
+            handleDeleteContact={handleDeleteContact}
+          />
+        </div>
+      </div>
     </div>
   );
 };

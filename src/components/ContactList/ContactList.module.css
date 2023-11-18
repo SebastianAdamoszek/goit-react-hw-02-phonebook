@@ -1,0 +1,8 @@
+.list__style {
+    width: 10px;
+    height: 10px;
+    background-color: black;
+    border-radius: 50%;
+    border: 2px solid rgb(102, 102, 102);
+
+}

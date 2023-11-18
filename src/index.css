@@ -7,9 +7,58 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  border: 3px solid gray;
+  text-shadow: 4px 4px 2px darkgray;
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+* {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+form {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  gap: 25px;
+}
+label {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  gap: 10px;
+}
+input {
+  font-size: 18px;
+  padding: 3px 10px;
+  color: rgb(33, 33, 41);
+  border: 2px solid rgb(102, 102, 102);
+  border-radius: 5px;
+}
+button {
+  width: 100px;
+  cursor: pointer;
+  border: 2px solid rgb(102, 102, 102);
+  border-radius: 5px;
+  padding: 3px 0;
+
+
+}
+
+ul {
+  margin-top: 15px;
+  width: 500px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+li {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
 }
