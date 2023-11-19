@@ -61,12 +61,12 @@ const App = () => {
   return (
     <div
       style={{
-        maxWidth: 950,
+        maxWidth: 900,
         height: '100vh',
         display: 'flex',
         justifyContent: 'start',
         alignItems: 'start',
-        gap: 100,
+        gap: 60,
         fontSize: 30,
         color: '#010101',
         margin: 20,
