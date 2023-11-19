@@ -5,7 +5,7 @@ const ContactItem = ({ contact, handleDeleteContact }) => (
   <li key={contact.id}>
         <p className={css.list__style}></p>
         {contact.name}: {contact.number}
-        <button onClick={() => handleDeleteContact(contact.id)}>Delete</button>
+        <button className={css.button__del} onClick={() => handleDeleteContact(contact.id)}>Delete</button>
       </li>
 );
 
