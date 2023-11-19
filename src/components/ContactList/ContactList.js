@@ -1,15 +1,15 @@
 import React from 'react';
-import css from './ContactList.module.css'
+import ContactItem from 'components/ContactItem/ContactItem';
 
 const ContactList = ({ contacts, handleDeleteContact }) => (
   
   <ul>
     {contacts.map(contact => (
-      <li key={contact.id}>
-        <p className={css.list__style}></p>
-        {contact.name}: {contact.number}
-        <button onClick={() => handleDeleteContact(contact.id)}>Delete</button>
-      </li>
+       <ContactItem
+       key={contact.id}
+       contact={contact}
+       handleDeleteContact={handleDeleteContact}
+     />
     ))}
   </ul>
 );
