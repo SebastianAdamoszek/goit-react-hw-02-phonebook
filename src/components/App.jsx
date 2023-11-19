@@ -3,6 +3,7 @@ import { nanoid } from 'nanoid';
 import ContactForm from './ContactForm/ContactForm';
 import ContactList from './ContactList/ContactList';
 import Filter from './Filter/Filter';
+import imgage from '../image/image.module.css'
 
 const App = () => {
   const [contacts, setContacts] = useState([
@@ -10,6 +11,8 @@ const App = () => {
     { id: 'id-2', name: 'Hermione Kline', number: '443-89-12' },
     { id: 'id-3', name: 'Eden Clements', number: '645-17-79' },
     { id: 'id-4', name: 'Annie Copeland', number: '227-91-26' },
+
+
   ]);
   const [name, setName] = useState('');
   const [number, setNumber] = useState('');
@@ -59,10 +62,10 @@ const App = () => {
   );
 
   return (
-    <div
+    <div className={imgage.background}
       style={{
         maxWidth: 900,
-        height: '100vh',
+        minHeight: 900,
         display: 'flex',
         justifyContent: 'start',
         alignItems: 'start',
@@ -71,12 +74,12 @@ const App = () => {
         color: '#010101',
         margin: 20,
         padding: 20,
-        backgroundColor: 'lightgray',
+        // backgroundColor: 'lightgray',
         border: '10px solid darkgray',
-        borderRadius: '10px',
+        borderRadius: 15,
       }}
     >
-      <div
+      <div 
         style={{
           display: 'flex',
           justifyContent: 'center',
