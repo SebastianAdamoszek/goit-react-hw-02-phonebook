@@ -21,19 +21,23 @@ class App extends Component {
     };
   }
 
-  handleNameChange = (e) => {
+  handleNameChange = e => {
     this.setState({ name: e.target.value });
   };
 
-  handleNumberChange = (e) => {
+  handleNumberChange = e => {
     this.setState({ number: e.target.value });
   };
 
-  handleSubmit = (e) => {
+  handleSubmit = e => {
     e.preventDefault();
     const { contacts, name, number } = this.state;
 
-    if (contacts.some((contact) => contact.name.toLowerCase() === name.toLowerCase())) {
+    if (
+      contacts.some(
+        contact => contact.name.toLowerCase() === name.toLowerCase()
+      )
+    ) {
       alert(`${name} is already a contact!`);
       return;
     }
@@ -51,13 +55,13 @@ class App extends Component {
     });
   };
 
-  handleFilterChange = (e) => {
+  handleFilterChange = e => {
     this.setState({ filter: e.target.value });
   };
 
-  handleDeleteContact = (id) => {
+  handleDeleteContact = id => {
     this.setState({
-      contacts: this.state.contacts.filter((contact) => contact.id !== id),
+      contacts: this.state.contacts.filter(contact => contact.id !== id),
     });
   };
 
@@ -68,8 +72,8 @@ class App extends Component {
       <div
         className={imgage.background}
         style={{
-          maxWidth: 900,
-          minHeight: 900,
+          width: 900,
+          height: 900,
           display: 'flex',
           justifyContent: 'start',
           alignItems: 'start',
@@ -111,12 +115,15 @@ class App extends Component {
         >
           <div>
             <h2 style={{ marginBottom: 4 }}>Contacts</h2>
-            <Filter filter={filter} handleFilterChange={this.handleFilterChange} />
+            <Filter
+              filter={filter}
+              handleFilterChange={this.handleFilterChange}
+            />
           </div>
           <div>
             <h2 style={{ marginTop: '25px' }}>Contact list</h2>
             <ContactList
-              contacts={contacts.filter((contact) =>
+              contacts={contacts.filter(contact =>
                 contact.name.toLowerCase().includes(filter.toLowerCase())
               )}
               handleDeleteContact={this.handleDeleteContact}
